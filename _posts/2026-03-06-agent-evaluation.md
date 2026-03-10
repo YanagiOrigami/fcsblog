@@ -123,7 +123,7 @@ Frontier-CS is already helping push the field toward real large-scale evaluation
 
 
 ### Use Case 1: Online Evolution
-<p style="margin-top: -0.5rem; font-size: 0.85em; color: #666; font-style: italic;">✍️ Shu Liu, Mert Cemri · <a href="https://skydiscover-ai.github.io/blog.html" style="color: #4a90d9;">SkyDiscover Team</a></p>
+<p style="margin-top: -0.5rem; font-size: 0.85em; color: #666; font-style: italic;">✍️ Shu Liu, Mert Cemri, and Shubham Agarwal · <a href="https://skydiscover-ai.github.io/blog.html" style="color: #4a90d9;">SkyDiscover Team</a></p>
 
 Many discovery problems operate in **online evolutionary settings**: the system repeatedly proposes solutions, receives feedback, and refines future candidates over long horizons. The key capability here is not just producing good solutions, but **learning to improve from experience over time**.
 
@@ -150,7 +150,7 @@ A concrete example illustrates this well. On a **polyomino packing** task from F
 </div>
 
 ### Use Case 2: Offline Learning
-<p style="margin-top: -0.5rem; font-size: 0.85em; color: #666; font-style: italic;">✍️ Qizheng Zhang, Jingzhuo Hu · <a href="https://arxiv.org/abs/2510.04618" style="color: #4a90d9;">ACE Team</a></p>
+<p style="margin-top: -0.5rem; font-size: 0.85em; color: #666; font-style: italic;">✍️ Qizheng Zhan and Jingzhuo Hu · <a href="https://arxiv.org/abs/2510.04618" style="color: #4a90d9;">ACE Team</a></p>
 
 The core idea of **ACE offline** is to improve an agent by training an evolving context, or we call it **playbook**, on a fixed training set. Instead of updating model weights, ACE updates the agent’s context through three stages: the **Generator** attempts problems, the **Reflector** extracts useful lessons from successes and failures, and the **Curator** merges these lessons into a structured playbook. Over time, the playbook accumulates reusable strategies, common mistakes, and code patterns that can be transferred to unseen tasks. This follows the central ACE design principle that contexts should function as **evolving playbooks** rather than short static prompts.
 
@@ -173,14 +173,14 @@ We observe that the best performance occurs at **epoch 1, step 70**, after which
   </figure>
 </div>
 
-<div style="display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap;">
+<div style="display: flex; justify-content: center; align-items: flex-start; gap: 2rem; flex-wrap: wrap;">
   <figure style="text-align: center; margin: 0; flex: 1; max-width: 45%;">
-    <img src="{{ 'assets/img/2026-03-06-agent-evaluation/offline-validation-score.png' | relative_url }}" style="width: 100%; border-radius: 6px;" alt="Baby-Giant" data-zoomable>
-    <figcaption style="margin-top: 0.5rem; font-size: 0.5em; font-weight: bold;">validation mean score: score on the separate validation set, computed periodically.</figcaption>
+    <img src="{{ 'assets/img/2026-03-06-agent-evaluation/offline-validation-score.png' | relative_url }}" style="width: 100%; border-radius: 6px;" alt="Validation Score" data-zoomable>
+    <figcaption style="margin-top: 0.5rem; font-size: 0.5em; font-weight: bold;">Validation mean score over training steps. The best checkpoint occurs early, after which performance plateaus.</figcaption>
   </figure>
   <figure style="text-align: center; margin: 0; flex: 1; max-width: 45%;">
-    <img src="{{ 'assets/img/2026-03-06-agent-evaluation/pre-post-train-accuracy.png' | relative_url }}" style="width: 100%; border-radius: 6px;" alt="Result" data-zoomable>
-    <figcaption style="margin-top: 0.5rem; font-size: 0.5em; font-weight: bold;">pre_train accuracy: score on training samples before playbook updates.<br>post_train accuracy: score on the same training samples after playbook updated.<br>cumulative by epoch.</figcaption>
+    <img src="{{ 'assets/img/2026-03-06-agent-evaluation/pre-post-train-accuracy.png' | relative_url }}" style="width: 100%; border-radius: 6px;" alt="Pre/Post Train Accuracy" data-zoomable>
+    <figcaption style="margin-top: 0.5rem; font-size: 0.5em; font-weight: bold;">Training accuracy before and after each playbook update, cumulated by epoch. Post-train accuracy often falls below pre-train, suggesting overfitting.</figcaption>
   </figure>
 </div>
 
